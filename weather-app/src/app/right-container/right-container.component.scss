@@ -1,4 +1,3 @@
-
 //CSS for outer container
 .right-container {
     height: 100%;
@@ -9,32 +8,134 @@
 
 
 //CSS for nav bar
-.right-container-nav-bar{
+.right-container-nav-bar {
     flex: 2;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: medium;
+    font-weight: bold;
 }
 
 //CSS for nav bar names
-.nav-bar-tabs{
+.nav-bar-tabs {
     display: flex;
     flex-direction: row;
     margin-left: 30px;
 }
+
+// CSS for today, hover and active states
+.today {
+    margin-right: 10px;
+    color: #c5c5c5
+}
+
+.today:hover {
+    color: #1a1a1a;
+    cursor: pointer;
+}
+
+.today-active{
+    color: #1a1a1a;
+}
+
+//CSS for week, hover and active states
+.week {
+    color: #c5c5c5;
+}
+
+.week:hover {
+    color: #1a1a1a;
+    cursor: pointer;
+}
+
+.week-active {
+    color: #1a1a1a;
+}
+
+//CSS for onclick underline
+.underline {
+    width: 50px;
+    height: 2px;
+    background-color: #1a1a1a;
+    margin-top: 1.5rem;
+}
+
+.underline-today {
+    transform: matrix3d(200%, 0, 0);
+    transition: 100ms;
+}
+
+.underline-week {
+    transform: matrix3d(100%, 0, 0);
+    transition: 100ms;
+}
+
 //CSS fro nav bar matric
-.nav-bar-matric{
+.nav-bar-matric {
     display: flex;
     flex-direction: row;
     margin-right: 30px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.today{
+//CSS for Celsius and Fahrenheit
+.celsius {
+    border-radius: 500px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    font-size: small;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
-.right-container-content-box{
+.celsius:hover{
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #1a1a1a;
+}
+.celsius-active{
+    color: #ffffff;
+    background-color: #1a1a1a;
+}  
+.fahrenheit{
+    border-radius: 500px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    font-size: small;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.fahrenheit-active{
+    color: #ffffff;
+    background-color: #1a1a1a;
+}   
+
+.fahrenheit:hover{
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #1a1a1a;
+}
+
+//CSS for profile image
+.profile-image img{
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+.right-container-content-box {
     flex: 12;
     display: flex;
     flex-direction: row;

@@ -1,11 +1,12 @@
-.left-container{
+.left-container {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
+
 //CSS for Nav bar of left container
-.left-container-nav-bar{
+.left-container-nav-bar {
     flex: 2;
     display: flex;
     flex-direction: row;
@@ -13,36 +14,61 @@
     align-items: center;
     // background-color: blue;
 }
-.search-icon{
+
+//CSS for search bar of left container
+.search-icon {
     flex: 2;
     text-align: right;
     margin-right: 5px;
 }
-.search-input{
+
+.search-input {
     flex: 8;
 }
-.search-input input{
+
+.search-input input {
     width: 100%;
     border: none;
     padding: 8px;
     font-size: 15px;
     color: black;
 }
-.location-icon{
+
+//CSS for location box of left container
+.location-icon {
     flex: 2;
     text-align: center;
     margin-top: -2px;
     margin-right: 10px;
 }
-.location-icon fa-sn{
+
+.location-icon fa-sn {
     padding: 2px 5px 2px 5px;
     background-color: #f6f6f6;
     border-radius: 500px;
 }
 
+/*==============================================================*/
+
 //CSS for content box of left container
-.left-container-content-box{
+.left-container-content-box {
     flex: 12;
     display: flex;
-    // background-color: red;
+    margin-left: 30px;
+    margin-right: 30px;
+    flex-direction: column;
+}
+
+/* Temperature Data: Image, value and Dat-Time */
+.left-container-temp-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Temperature Details: Summary Phrase, Rain value, Location Image and Location Details */
+.left-container-other-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }

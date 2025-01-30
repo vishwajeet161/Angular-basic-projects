@@ -66,9 +66,94 @@
     flex-direction: column;
 }
 
+
+.left-container-temp-img{
+    flex: 2;
+
+}
+
+.left-container-temp-img img{
+    width: 160px;
+    height: 160px;
+}
+
+.left-container-temp-value{
+    flex: 1;
+    font-size: 62px;
+    font-weight: normal;
+}
+.left-container-temp-value sup{
+    position: relative;
+    margin-top: 3px;
+    font-size: 36px;
+}
+
+.left-container-day-time{
+    flex: 1;
+    font-weight: 500;
+    color: black;
+    font-size: 14px;
+}
+.left-container-day-time span{
+    color: #c9c9c9;
+}
+
+//CSS for dividing line
+.dividing-line{
+    height: 1px;
+    width: 100px;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* Temperature Details: Summary Phrase, Rain value, Location Image and Location Details */
-.left-container-other-data {
+.left-container-other-details {
     flex: 1;
     display: flex;
     flex-direction: column;
+    
+}
+
+.left-container-temp-summary{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    font-weight: 500;
+}
+.left-container-temp-summary-phrase-img{
+    margin-right: 8px;
+}
+
+.left-container-rain-stats{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    font-weight: 500;
+}
+.left-container-rain-stats-img{
+    margin-right: 9px;
+}
+
+.left-container-location-details{
+    flex: 4;
+    text-align: center;
+}
+
+.left-container-location-img{
+    margin-bottom: 30px;
+}
+.left-container-location-img img{
+    width: 220px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.left-container-location-name{
+    margin-top: -90px;
+    font-size: medium;
+    font-weight: bold;
+    color: #ffffff;
 }

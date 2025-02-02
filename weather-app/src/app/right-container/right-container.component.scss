@@ -43,6 +43,7 @@
 //CSS for week, hover and active states
 .week {
     color: #c5c5c5;
+    margin-right: 2px;
 }
 
 .week:hover {
@@ -56,10 +57,10 @@
 
 //CSS for onclick underline
 .underline {
-    width: 38px;
-    height: 1px;
+    width: 47px;
+    height: 1.5px;
     background-color: #1a1a1a;
-    margin-top: 1.2rem;
+    margin-top: 22px;
 }
 
 .underline-today {
@@ -138,5 +139,57 @@
 .right-container-content-box {
     flex: 12;
     display: flex;
+    flex-direction: column;
+    margin: 30px;
+    margin-top: 5px;
+}
+
+.right-container-week-cards{
+    flex: 1;
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // background-color: red;
+}
+
+.card{
+    width: 100px;
+    height: 115px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-left: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    font-weight: 500;
+
+}
+
+.card-day{
+    margin: 5px;
+    margin-top: 7px;
+}
+
+.card_temp-img img{
+    width: 50px;
+    height: 50px;
+}
+.card-temp-value{
+    margin: 3px;
+    margin-top: 10px;
+}
+
+.right-container-today-cards{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-container-todays-highlights{
+    flex: 3;
+    // background-color: blue;
 }

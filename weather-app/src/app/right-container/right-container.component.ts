@@ -1,13 +1,26 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faFaceSmile } from '@fortawesome/free-solid-svg-icons';
+import { faFaceFrown } from '@fortawesome/free-solid-svg-icons';
+
+
 
 @Component({
   selector: 'app-right-container',
-  imports: [NgIf],
+  imports: [NgIf, FontAwesomeModule],
   templateUrl: './right-container.component.html',
   styleUrl: './right-container.component.scss'
 })
 export class RightContainerComponent {
+  //variables for thumbs up and thumbs down icons face smile and face frowned
+  faThumbsUp: any  = faThumbsUp;
+  faThumbsDown: any  = faThumbsDown;
+  faFaceSmile: any = faFaceSmile;
+  faFaceFrown: any = faFaceFrown;
+
   //variables to control tabs
   today:boolean = false;
   week:boolean = true;

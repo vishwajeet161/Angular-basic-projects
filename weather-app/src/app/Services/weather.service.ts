@@ -19,24 +19,52 @@ export class WeatherService {
   weatherDetails?: WeatherDetails;
 
   //Variables that have the extracted data from the API Endpoint Variables
-  temperatureData?: TemperatureData; // Left-container Data
+  temperatureData: TemperatureData = new TemperatureData(); // Left-container Data
 
   todayData?: TodayData;//Right-container Data
   weekData?: WeekData;// Right-container Data
   todaysHighlight?: TodaysHighlight;// Right-container Data
 
-  constructor(private httpClient: HttpClient) {
-    this.getData();
-  }
-
 
   //Variables to be used for API call
-  cityName: string = 'Pune';
+  cityName: string = 'Patna';
   language: string = 'en-US';
   date: string = '20200622';
   units: string = 'm';
 
+  //Variables for current Time
+  currentTime:Date;
+  constructor(private httpClient: HttpClient) {
+    this.getData();
+  }
 
+  getSummaryImage(summary: string): string{
+    var baseAddress = "\\home\\vishwajeet161\\Desktop\\angular\\Angular-basic-projects\\weather-app\\public\\assets\\";
+    var cloudySunny = "cloudy-sunny.png";
+    var rainy = "rainy.png";
+    var windy = "windy.png";
+    var sunny = "sunny.png";
+    var night = "night.png";
+    var cloudy = "cloudy.png";
+    var snow = "snow.png";
+    var thunderstorm = "thunderstorm.png";
+    return "";
+  }
+
+  //Method to create useful data chunks for UI using the data recieved from API
+  prepareData():void {
+    //Setting Left container Data Model Properties
+    this.currentTime = new Date();
+    this.temperatureData.day = this.weatherDetails['v3-wx-observations-current'].dayOfWeek;
+    this.temperatureData.time = `${this.currentTime.getHours()}:${this.currentTime.getMinutes()}`;
+    this.temperatureData.temperature = this.weatherDetails['v3-wx-observations-current'].temperature;
+    this.temperatureData.location = `${this.locationDetails.location.city[0]}, ${this.locationDetails.location.country[0]}`;
+    this.temperatureData.rainPercent = this.weatherDetails['v3-wx-observations-current'].precip24Hour;
+    this.temperatureData.summaryPhrase = this.weatherDetails['v3-wx-observations-current'].wxPhraseShort;
+  }
+
+
+  //Method to get the location details from the API using the variable cityName as the input
   getLocationDetails(cityName: string, language: string): Observable<LocationDetails> {
     return this.httpClient.get<LocationDetails>(EnvironmentVariables.weatherApiLocationBaseUrl, {
       headers: new HttpHeaders()
@@ -49,6 +77,7 @@ export class WeatherService {
     });
   }
 
+  //Method to get the weather details from the API using the variables date, latitude, longitude, language and units as the input
   getWeatherReport(date: string, latitude: number, longitude: number, language: string, units: string): Observable<WeatherDetails> {
     return this.httpClient.get<WeatherDetails>(EnvironmentVariables.weatherApiForcastBaseUrl, {
       headers: new HttpHeaders()
@@ -69,14 +98,16 @@ export class WeatherService {
         this.locationDetails = respose;
         const latitude = this.locationDetails?.location.latitude[0];
         const longitude = this.locationDetails?.location.longitude[0];
-  
+
         console.log("Location Details:", this.locationDetails);
-  
+
         if (latitude !== undefined && longitude !== undefined) {
           this.getWeatherReport(this.date, latitude, longitude, this.language, this.units).subscribe({
             next: (response) => {
               this.weatherDetails = response;
-              console.log("Weather Details:", this.weatherDetails);
+              // console.log("Weather Details:", this.weatherDetails);
+
+              this.prepareData();
             },
             error: (err) => {
               console.error("Error fetching weather details:", err);
@@ -87,9 +118,10 @@ export class WeatherService {
         }
       },
       error: (err) => {
-        console.error("Error fetching location details:", err);
+        // console.error("Error fetching location details:", err);
       }
     });
   }
-  
+
+
 }

@@ -1,5 +1,5 @@
 
-export interface TemperatureData {
+export class TemperatureData {
     temperature: number;
     summaryImage:string;
     day: String;

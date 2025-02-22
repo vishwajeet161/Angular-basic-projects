@@ -1,4 +1,4 @@
-export interface WeekData{
+export class WeekData{
     day: string;
     summaryImage:string;
     tempMax:string;
